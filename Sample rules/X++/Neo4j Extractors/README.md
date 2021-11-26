@@ -15,7 +15,8 @@ The import format of Neo4j requires that the input files are split into data fil
 
 The xq files are XQuery source files that can be executed against a BaseX backend that contains a database containing X++ ASTs. The BulkQuery tool that is part of this repo can be used to execute all the scripts in a particular directory (i.e. the .xq files), storing the results (i.e. the .csv files) into a target directory.
 
-There may be other files that can be used for other extraction purposes, if the information used to generate the nodes and edges are not based in a BaseX database. 
+There may be other files that can be used for other extraction purposes, if the information used to generate the nodes and edges are not based in a BaseX database. In particular,
+for the X++ case, it is possible to use the cross reference tool to generate miscellaneous information, especially about methods calling each other.
 
 Once the data is created in CSV files, it can be imported into Neo4j by using the nwo4j-admin tool with the import argument. You will how to do this by perusing the import.bat file in this directory.
 
