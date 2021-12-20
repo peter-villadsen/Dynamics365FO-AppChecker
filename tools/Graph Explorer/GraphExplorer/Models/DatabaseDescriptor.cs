@@ -14,5 +14,5 @@ namespace GraphExplorer.Models
         public string CurrentStatus { get; set; }
         public bool IsDefault { get; set; }
 
-}
+    }
 }

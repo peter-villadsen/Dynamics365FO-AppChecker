@@ -75,7 +75,7 @@ namespace GraphExplorer
             var translated = WPFLocalizeExtension.Extensions.LocExtension.GetLocalizedValue<string>("EditMenu");
 
             string password;
-            if (!this.model.IsDebugMode)
+            if (!Model.IsDebugMode)
             {
                 // Now show the connection dialog
                 var connectionWindow = new Views.ConnectionWindow(this.model);
@@ -224,12 +224,17 @@ namespace GraphExplorer
             };
 
             this.Browser.NavigationCompleted += this.Browser_NavigationCompleted;
-            // The debugger does not work in Edge if the source does not come from a file.
-            // Load the script into a temporary file, and use that file in the URI that
-            // the debugger loads.
-            this.Browser.Source = this.model.ScriptUri;
 
-            this.TextBrowser.NavigateToString(@"<html>
+            this.ViewModel.GraphModeSelected = false;
+            this.ViewModel.TextModeSelected = true;
+        }
+
+        protected override void OnContentRendered(EventArgs e)
+        {
+            base.OnContentRendered(e);
+            // It is now safe to render web content
+            this.TextBrowser.NavigateToString(@"
+<html>
     <head>
         <style>
             html, body, .container {
@@ -248,8 +253,11 @@ namespace GraphExplorer
         Welcome to the Neo4j Graph Explorer
     </body>
 </html>");
-            this.ViewModel.GraphModeSelected = false;
-            this.ViewModel.TextModeSelected = true;
+
+            // The debugger does not work in Edge if the source does not come from a file.
+            // Load the script into a temporary file, and use that file in the URI that
+            // the debugger loads.
+            this.Browser.Source = this.model.ScriptUri;
         }
 
         protected override void OnClosed(EventArgs e)

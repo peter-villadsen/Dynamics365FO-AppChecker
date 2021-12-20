@@ -357,7 +357,7 @@ namespace GraphExplorer.Models
             Properties.Settings.Default.Save();
         }
 
-        public bool IsDebugMode
+        public static bool IsDebugMode
         {
             get
             {

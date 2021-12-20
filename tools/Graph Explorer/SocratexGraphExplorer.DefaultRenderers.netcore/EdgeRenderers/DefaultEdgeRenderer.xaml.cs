@@ -1,6 +1,4 @@
-﻿using Neo4j.Driver;
-using GraphExplorer.Common;
-using GraphExplorer.DefaultsPlugin;
+﻿using GraphExplorer.Common;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows;
