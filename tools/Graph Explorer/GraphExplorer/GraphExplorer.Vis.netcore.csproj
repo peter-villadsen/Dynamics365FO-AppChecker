@@ -3,7 +3,7 @@
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
 
     <RootNamespace>GraphExplorer</RootNamespace>
@@ -198,18 +198,16 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <PackageReference Include="AvalonEdit" Version="6.1.2.30" />
+    <PackageReference Include="MaterialDesignColors" Version="2.0.3-ci8" />
+    <PackageReference Include="MaterialDesignExtensions" Version="4.0.0-a02" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.2.1-ci8" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.961.33" />
+    <PackageReference Include="Neo4j.Driver" Version="4.3.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="VirtualizingWrapPanel" Version="1.5.4" />
+    <PackageReference Include="WPFLocalizeExtension" Version="3.9.0" />
   </ItemGroup>
-    <ItemGroup>
-        <PackageReference Include="AvalonEdit" Version="6.1.2.30" />
-        <PackageReference Include="MaterialDesignColors" Version="2.0.3-ci8" />
-        <PackageReference Include="MaterialDesignExtensions" Version="4.0.0-a02" />
-        <PackageReference Include="MaterialDesignThemes" Version="4.2.1-ci8" />
-        <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.961.33" />
-        <PackageReference Include="Neo4j.Driver" Version="4.3.2" />
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-        <PackageReference Include="VirtualizingWrapPanel" Version="1.5.4" />
-        <PackageReference Include="WPFLocalizeExtension" Version="3.9.0" />
-    </ItemGroup>
     <ItemGroup>
         <Resource Include="Images\CloudRun_16x.png" />
         <Resource Include="Images\ConnectToDatabase_16x.png" />
