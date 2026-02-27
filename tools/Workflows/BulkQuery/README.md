@@ -21,7 +21,10 @@ The command line parameters are:
         --version                                Show version information
         -?, -h, --help                           Show help and usage information
 
-The name of the BaseX server is a URL that designates a server running a BaseX server. The port switch can be used to override the default port number, if necesarry. The user name and password should be provided. If no user name is provided, the "admin" user is used. The queries are executed against the database provided by the database switch.
+The name of the BaseX server is a URL that designates a server running a BaseX server. The port switch can be used to override the default port number, if necessary. 
+If no user name is provided, the "admin" user is used. The password must be provided. 
+
+The queries are executed against the database provided by the database switch.
 
 The verbose flag causes the tool to list the supplied parameters and logs the query execution to the standard output.
 
