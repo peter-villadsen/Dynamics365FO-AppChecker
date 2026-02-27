@@ -179,8 +179,8 @@ namespace Wpf.Controls
 
             for (int i = 0; i < childCount; i++)
             {
-                if (!(InternalChildren[i] is TabItem tabItem)) 
-                    return new Size();
+                if (!(InternalChildren[i] is Wpf.Controls.TabItem tabItem)) 
+                    continue; // Skip non-custom TabItems instead of returning empty size
 
                 SetDimensions(tabItem);
 
@@ -311,8 +311,8 @@ namespace Wpf.Controls
             // this will also get us the height required for all TabItems
             for (int i = 0; i < childCount; i++)
             {
-                if (!(InternalChildren[i] is TabItem tabItem)) 
-                    return new Size();
+                if (!(InternalChildren[i] is Wpf.Controls.TabItem tabItem)) 
+                    continue; // Skip non-custom TabItems instead of returning empty size
 
                 SetDimensions(tabItem);
 
@@ -473,7 +473,8 @@ namespace Wpf.Controls
             // arrange the children
             for (var i = 0; i < InternalChildren.Count; i++)
             {
-                InternalChildren[i].Arrange(_childRects[i]);
+                var rect = i < _childRects.Count ? _childRects[i] : new Rect();
+                InternalChildren[i].Arrange(rect);
             }
 
             // we need these lines as when the Scroll Buttons get Shown/Hidden,
@@ -684,7 +685,7 @@ namespace Wpf.Controls
 
         #region Helpers
 
-        private static void SetDimensions(TabItem tabItem)
+        private static void SetDimensions(Wpf.Controls.TabItem tabItem)
         {
             if (tabItem.Dimension == null)
             {

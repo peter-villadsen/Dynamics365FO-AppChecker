@@ -80,8 +80,18 @@ namespace XppReasoningWpf
                 this.Model.Status = e.Message;
             }
 
-            // Create the first query page
-            this.ViewModel.CreateNewQueryTabItem();
+            // Create the first query page - moved to after UI is fully loaded
+            this.Loaded += (s, e) =>
+            {
+                try
+                {
+                    this.ViewModel.CreateNewQueryTabItem();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error creating initial query tab: {ex.Message}", "Startup Error");
+                }
+            };
         }
 
         /// <summary>
@@ -115,7 +125,11 @@ namespace XppReasoningWpf
         {
             base.OnInitialized(e);
 
-            this.queryTabPage.SelectedIndex = 0;
+            // Only set selected index if there are items
+            if (this.queryTabPage.Items.Count > 0)
+            {
+                this.queryTabPage.SelectedIndex = 0;
+            }
         }
 
         /// <summary>
