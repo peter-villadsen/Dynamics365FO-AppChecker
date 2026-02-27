@@ -92,7 +92,7 @@ namespace GraphExplorer
             }
             else
             {
-                password = "test";
+                password = "neo4jtest";
             }
 
             // Now that the value of the connection parameters have been set,
@@ -232,7 +232,14 @@ namespace GraphExplorer
         protected override void OnContentRendered(EventArgs e)
         {
             base.OnContentRendered(e);
+            // Initialize web content asynchronously
+            this.InitializeWebContentAsync();
+        }
+
+        private async void InitializeWebContentAsync()
+        {
             // It is now safe to render web content
+            await this.TextBrowser.EnsureCoreWebView2Async(null);
             this.TextBrowser.NavigateToString(@"
 <html>
     <head>
@@ -257,6 +264,8 @@ namespace GraphExplorer
             // The debugger does not work in Edge if the source does not come from a file.
             // Load the script into a temporary file, and use that file in the URI that
             // the debugger loads.
+            // Ensure CoreWebView2 is initialized before setting Source
+            await this.Browser.EnsureCoreWebView2Async(null);
             this.Browser.Source = this.model.ScriptUri;
         }
 

@@ -1,7 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-using mde = MaterialDesignExtensions.Controls;
+using Mde = MaterialDesignExtensions.Controls;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Web.WebView2.Core;
 using Microsoft.Web.WebView2.Wpf;
@@ -1088,7 +1088,7 @@ openMenu ({
 
         private async void SaveQueryFile()
         {
-            var dialogArgs = new mde.SaveFileDialogArguments()
+            var dialogArgs = new Mde.SaveFileDialogArguments()
             {
                 Width = 800,
                 Height = 1600,
@@ -1102,7 +1102,7 @@ openMenu ({
                 CurrentDirectory = Properties.Settings.Default.SourceFileDirectory,
             };
 
-            var result = await mde.SaveFileDialog.ShowDialogAsync("RootDialog", dialogArgs);
+            var result = await Mde.SaveFileDialog.ShowDialogAsync("RootDialog", dialogArgs);
 
             if (result.Confirmed)
             {
@@ -1116,7 +1116,7 @@ openMenu ({
         private async void OpenQueryFile()
         {
             // open file
-            var dialogArgs = new mde.OpenFileDialogArguments()
+            var dialogArgs = new Mde.OpenFileDialogArguments()
             {
                 Width = 800,
                 Height = 1600,
@@ -1126,7 +1126,7 @@ openMenu ({
                 CurrentDirectory = Properties.Settings.Default.SourceFileDirectory,
             };
 
-            var result = await mde.OpenFileDialog.ShowDialogAsync("RootDialog", dialogArgs);
+            var result = await Mde.OpenFileDialog.ShowDialogAsync("RootDialog", dialogArgs);
 
             if (result.Confirmed)
             {

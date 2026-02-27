@@ -458,7 +458,7 @@ namespace GraphExplorer.Models
                 this.Message = "Done.";
                 return res;
             }
-            catch (ResultConsumedException _)
+            catch (ResultConsumedException)
             {
                 // This happens when the query is forcibly aborted.
                 this.Message = "Query aborted";
