@@ -2,10 +2,8 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <PackageLicenseFile>..\MIT License.md</PackageLicenseFile>
-  </PropertyGroup>
-  <PropertyGroup>
     <AssemblyName>BulkQuery</AssemblyName>
     <RootNamespace>BulkQuery</RootNamespace>
   </PropertyGroup>
