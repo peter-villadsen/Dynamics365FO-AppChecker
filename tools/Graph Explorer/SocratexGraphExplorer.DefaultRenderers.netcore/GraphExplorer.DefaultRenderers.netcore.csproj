@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Authors>Peter Villadsen</Authors>
     <PackageId>GraphExplorer.DefaultRenderers</PackageId>
     <Company>Microsoft</Company>
@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <None Remove="NodeRenderers\DefaultNodeRenderer.xaml" />
+    <PackageReference Include="MaterialDesignExtensions" Version="4.0.0-a02" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,11 +29,6 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="MaterialDesignExtensions" Version="4.0.0-a02" />
-    <PackageReference Include="System.ComponentModel.Composition" Version="5.0.0" />
   </ItemGroup>
  
 </Project>
