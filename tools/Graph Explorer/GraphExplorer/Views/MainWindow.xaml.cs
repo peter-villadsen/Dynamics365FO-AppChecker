@@ -92,7 +92,7 @@ namespace GraphExplorer
             }
             else
             {
-                password = "test";
+                password = "neo4jtest";
             }
 
             // Now that the value of the connection parameters have been set,
