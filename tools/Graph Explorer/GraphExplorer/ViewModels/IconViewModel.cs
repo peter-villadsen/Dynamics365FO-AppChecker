@@ -17,7 +17,6 @@ namespace GraphExplorer.ViewModels
     public class IconViewModel : ViewModelBase
     {
         private readonly Lazy<IEnumerable<GraphExplorer.Models.IconKindGroup>> _packIconKinds;
-        private readonly ISnackbarMessageQueue _snackbarMessageQueue;
         private readonly IDictionary<PackIconKind, string> factory = GraphExplorer.Models.PackIconDataFactory.Create();
 
         public IconViewModel()

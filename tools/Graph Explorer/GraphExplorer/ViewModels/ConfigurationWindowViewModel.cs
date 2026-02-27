@@ -11,7 +11,9 @@ namespace GraphExplorer.ViewModels
 
     public class StepperColorViewModel : INotifyPropertyChanged
     {
+#pragma warning disable CS0067 // Event is never used
         public event PropertyChangedEventHandler PropertyChanged;
+#pragma warning restore CS0067
         public StepperColorViewModel()
         {
 
@@ -20,7 +22,9 @@ namespace GraphExplorer.ViewModels
 
     public class StepperShapeViewModel : INotifyPropertyChanged
     {
+#pragma warning disable CS0067 // Event is never used
         public event PropertyChangedEventHandler PropertyChanged;
+#pragma warning restore CS0067
         public StepperShapeViewModel()
         {
 

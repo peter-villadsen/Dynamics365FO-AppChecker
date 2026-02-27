@@ -5,7 +5,6 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
-    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <NoWarn>CA1416,NETSDK1187</NoWarn>
 
     <RootNamespace>GraphExplorer</RootNamespace>

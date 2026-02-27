@@ -9,7 +9,6 @@
     <Description>Provides default renderers for nodes and edges that do not have any specific renderers.</Description>
     <Copyright>Copyright © 2020</Copyright>
     <UseWPF>true</UseWPF>
-    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <NoWarn>NETSDK1187,CA1416</NoWarn>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/microsoft/Dynamics365FO-AppChecker</PackageProjectUrl>
