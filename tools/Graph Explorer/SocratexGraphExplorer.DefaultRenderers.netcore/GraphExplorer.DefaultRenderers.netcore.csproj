@@ -17,7 +17,7 @@
   <ItemGroup>
     <None Remove="NodeRenderers\DefaultNodeRenderer.xaml" />
     <PackageReference Include="MaterialDesignExtensions" Version="4.0.0-a02" />
-    <PackageReference Include="System.ComponentModel.Composition" Version="5.0.0" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="10.0.3" />
   </ItemGroup>
 
   <ItemGroup>
