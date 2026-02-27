@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <OutputType>WinExe</OutputType>
     <RootNamespace>XppReasoningWpf</RootNamespace>
@@ -18,6 +18,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="ApplicationExitCommand.cs" />
+    <PackageReference Include="AvalonEdit" Version="6.0.1" />
+    <PackageReference Include="Microsoft.ApplicationInsights" Version="2.12.1" />
+    <PackageReference Include="System.Buffers" Version="4.5.0" />
+    <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.0" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Images\Alecive-Flatwoken-Apps-File-Xml.ico" />
@@ -32,14 +38,6 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="AvalonEdit" version="6.0.1" />
-    <PackageReference Include="Microsoft.ApplicationInsights" version="2.12.1" />
-    <PackageReference Include="System.Buffers" version="4.5.0" />
-    <PackageReference Include="System.Numerics.Vectors" version="4.5.0" />
-    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" version="4.7.0" />
-    <PackageReference Include="System.ValueTuple" version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Alecive-Flatwoken-Apps-File-Xml.ico" />
