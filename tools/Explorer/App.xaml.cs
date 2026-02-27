@@ -1,8 +1,8 @@
 ﻿// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-using Microsoft.ApplicationInsights;
-using Microsoft.ApplicationInsights.Extensibility;
+//using Microsoft.ApplicationInsights;
+//using Microsoft.ApplicationInsights.Extensibility;
 using System;
 using System.Reflection;
 using System.Windows;

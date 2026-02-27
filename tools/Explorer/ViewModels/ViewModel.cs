@@ -816,7 +816,7 @@ namespace XppReasoningWpf.ViewModels
             this.ExecuteQueryCommand = new RelayCommand(
                 async p =>
                 {
-                    var queryEditor = p as QueryEditor;
+                    var queryEditor = (QueryEditor)p;
                     string query;
 
                     if (queryEditor.SelectionLength > 0)
@@ -846,6 +846,18 @@ namespace XppReasoningWpf.ViewModels
                                 Height = 16,
                             };
                             result = await this.ExecuteQueryAsync(query, session);
+
+                            // We want a nicely formatted XML if the result is XML, so try to parse it and re-serialize
+                            // it with indentation. If it's not XML, just use the raw result.
+                            try
+                            {
+                                var doc = XDocument.Parse(result);
+                                result = doc.ToString();  // This will format the XML with indentation
+                            }
+                            catch (System.Xml.XmlException)
+                            {
+                                // If it's not valid XML, leave result as-is
+                            }
                         }
                         catch (Exception e)
                         {
