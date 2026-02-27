@@ -2,53 +2,84 @@
 
 ## Project target framework modifications
 
-| Project name                           | Old Target Framework | New Target Framework | Commits                   |
-|:---------------------------------------|:--------------------:|:---------------------:|---------------------------|
-| Socratex Explorer.netcore.csproj       | netcoreapp3.1        | net8.0-windows        | f538c131, 646167ff        |
-| BaseXInterface.netcore.csproj           | netcoreapp3.1        | net8.0-windows        | bba4579e                  |
+| Project name                                   | Old Target Framework | New Target Framework | Commits                   |
+|:-----------------------------------------------|:--------------------:|:---------------------:|---------------------------|
+| GraphExplorer.Core.netcore.csproj             | netcoreapp3.1        | net8.0                | 94e1bd3b                  |
+| GraphExplorer.Common.netcore.csproj           | netcoreapp3.1        | net8.0-windows        | ba6b0ce4                  |
+| GraphExplorer.LocalizableResources.netcore.csproj | netcoreapp3.1    | net8.0                | b4fb4d3d                  |
+| GraphExplorer.SourceEditor.netcore.csproj     | netcoreapp3.1        | net8.0-windows        | 1230362c, 381c2a7c        |
+| GraphExplorer.DefaultRenderers.netcore.csproj | netcoreapp3.1        | net8.0-windows        | 6de2c1df                  |
+| GraphExplorer.Vis.netcore.csproj              | netcoreapp3.1        | net8.0-windows        | 8c15580e                  |
 
 ## NuGet Packages
 
 | Package Name                           | Old Version | New Version | Commit ID                 |
 |:---------------------------------------|:-----------:|:-----------:|---------------------------|
-| Microsoft.ApplicationInsights          | 2.12.1      | 3.0.0       | 646167ff                  |
-| System.Buffers                         | 4.5.0       | (removed)   | 646167ff                  |
-| System.Numerics.Vectors                | 4.5.0       | (removed)   | 646167ff                  |
-| System.Runtime.CompilerServices.Unsafe | 4.7.0       | 6.1.2       | 646167ff                  |
-| System.ValueTuple                      | 4.5.0       | (removed)   | 646167ff                  |
+| Newtonsoft.Json                        | 13.0.1      | 13.0.4      | d0559744, 33c584a6        |
+| System.ComponentModel.Composition      | 5.0.0       | 10.0.3      | 5e24bca4                  |
 
 ## All commits
 
 | Commit ID  | Description                                              |
 |:-----------|:---------------------------------------------------------|
-| 500df502   | Commit upgrade plan                                      |
-| f538c131   | Update .NET target and remove AssemblyInfo              |
-| 646167ff   | Update Explorer project dependencies                     |
-| bba4579e   | Upgrade BaseXInterface to .NET 8.0                      |
+| 60b482c8   | Commit upgrade plan                                      |
+| 94e1bd3b   | Upgrade GraphExplorer.Core target framework             |
+| d0559744   | Update Newtonsoft.Json to 13.0.4                        |
+| ba6b0ce4   | Update .NET target framework to net8.0-windows          |
+| b4fb4d3d   | Update Graph Explorer resources to .NET 8.0             |
+| 1230362c   | Update .NET target framework to net8.0                  |
+| 381c2a7c   | Store final changes for step 'Upgrade GraphExplorer.SourceEditor.netcore.csproj to .NET 8.0' |
+| 6de2c1df   | Update .NET target to net8.0-windows                    |
+| 5e24bca4   | Update System.ComponentModel.Composition to v10.0.3     |
+| 8c15580e   | Update GraphExplorer to .NET 8.0                        |
+| 33c584a6   | Update Newtonsoft.Json to version 13.0.4                |
 
 ## Project feature upgrades
 
-### Socratex Explorer.netcore.csproj
+### GraphExplorer.Core.netcore.csproj
+
+Here is what changed for the project during upgrade:
+
+- **Target Framework Upgrade**: Successfully upgraded from .NET Core 3.1 to .NET 8.0
+- **NuGet Package Updates**: Updated Newtonsoft.Json from 13.0.1 to 13.0.4 for enhanced JSON serialization features and bug fixes
+
+### GraphExplorer.Common.netcore.csproj
+
+Here is what changed for the project during upgrade:
+
+- **Target Framework Upgrade**: Successfully upgraded from .NET Core 3.1 to .NET 8.0-windows to support Windows-specific features
+
+### GraphExplorer.LocalizableResources.netcore.csproj
+
+Here is what changed for the project during upgrade:
+
+- **Target Framework Upgrade**: Successfully upgraded from .NET Core 3.1 to .NET 8.0 for improved runtime performance and modern language features
+
+### GraphExplorer.SourceEditor.netcore.csproj
 
 Here is what changed for the project during upgrade:
 
 - **Target Framework Upgrade**: Successfully upgraded from .NET Core 3.1 to .NET 8.0-windows
-- **Legacy AssemblyInfo Removal**: Removed the traditional AssemblyInfo.cs file and migrated to modern SDK-style assembly metadata
-- **NuGet Package Updates**: 
-  - Updated Microsoft.ApplicationInsights from deprecated version 2.12.1 to 3.0.0
-  - Updated System.Runtime.CompilerServices.Unsafe from 4.7.0 to 6.1.2
-  - Removed redundant packages (System.Buffers, System.Numerics.Vectors, System.ValueTuple) as their functionality is now included in .NET 8.0
+- **WPF Support Added**: Added UseWPF=true property to support AvalonEdit and other WPF controls properly
 
-### BaseXInterface.netcore.csproj
+### GraphExplorer.DefaultRenderers.netcore.csproj
 
 Here is what changed for the project during upgrade:
 
 - **Target Framework Upgrade**: Successfully upgraded from .NET Core 3.1 to .NET 8.0-windows
-- **Legacy AssemblyInfo Removal**: Removed the traditional AssemblyInfo.cs file and modernized to use SDK-style project format for assembly metadata
-- **Windows Desktop Compatibility**: Maintained Windows desktop compatibility through the windows-specific target framework moniker
+- **NuGet Package Updates**: Updated System.ComponentModel.Composition from deprecated version 5.0.0 to 10.0.3
+
+### GraphExplorer.Vis.netcore.csproj
+
+Here is what changed for the project during upgrade:
+
+- **Target Framework Upgrade**: Successfully upgraded from .NET Core 3.1 to .NET 8.0-windows
+- **Legacy AssemblyInfo Removal**: Removed traditional AssemblyInfo.cs file and modernized to use SDK-style assembly metadata
+- **NuGet Package Updates**: Updated Newtonsoft.Json from 13.0.1 to 13.0.4
 
 ## Next steps
 
-- Test the upgraded applications to ensure they work correctly with .NET 8.0
-- Consider updating any remaining dependencies to their latest versions compatible with .NET 8.0
-- Review and update any custom code that might benefit from new .NET 8.0 features and performance improvements
+- Build and test the upgraded solution to ensure all functionality works correctly with .NET 8.0
+- Consider updating any remaining NuGet packages to their latest versions compatible with .NET 8.0
+- Review and optimize code to take advantage of new .NET 8.0 performance features and language improvements
+- Update deployment scripts and CI/CD pipelines to target .NET 8.0 runtime
